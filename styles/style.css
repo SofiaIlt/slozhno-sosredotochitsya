@@ -1,3 +1,6 @@
+:root {
+  --accent-color: #ff0070;
+}
 
 .page {
   background-image: url(/images/cover-image-dark.png);
@@ -7,6 +10,69 @@
   background-attachment: fixed;
 }
 
-
 /* text-shadow: 4px 4px 0 var(--accent-color); */
 /* для заголовка + переписать для ссылок*/
+
+.header__title {
+  color: #DB00FF;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-weight: 700;
+  font-size: 157px;
+  line-height: 129.53px;
+}
+
+.text__subtitle {
+  font-weight: 700;
+}
+
+.articles__list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.reasons__list-item {
+
+}
+
+.article__title {
+  color: #FF0070;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+}
+
+.marked-text {
+  color: #000028;
+  font-size: 18px;
+  line-height: 23.4px;
+  background-color: #FF0070;
+  max-width: calc(100vw - 20px);
+}
+
+.reason__title {
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.reason__text {
+  color: #F1B2CE;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  margin-top: 10px;
+}
+
+.accent-word {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.articles__list-item .article__subtitle {
+  margin-bottom: 10px;
+}
+
+.article__image {
+  max-width: calc(100vw - 20px);
+}
