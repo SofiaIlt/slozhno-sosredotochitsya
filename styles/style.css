@@ -8,21 +8,95 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  overflow: auto;
 }
 
 /* text-shadow: 4px 4px 0 var(--accent-color); */
 /* для заголовка + переписать для ссылок*/
 
-.header__title {
+
+.header {
+  padding-bottom: 66px;
+  position: relative;
+}
+
+.decorative-element::before {
+  content: "REC";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  position: absolute;
+  top: 10px;
+  right: 38px;
+  color: #FF0070;
+}
+
+.decorative-element::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 19px;
+  width: 9px;
+  height: 9px;
+  background-color: #FF0070;
+  border-radius: 5px;
+  filter: drop-shadow(2px 2px 4px #FF0070);
+}
+
+.title {
   color: #DB00FF;
   text-shadow: 4px 4px 0 var(--accent-color);
   font-weight: 700;
-  font-size: 157px;
-  line-height: 129.53px;
+  font-size: 116px;
+  line-height: 95.7px;
+}
+
+.header__title {
+  margin: 65px 10px 55px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.header__text {
+  margin: 0 10px 0;
+  
+}
+
+.header__text::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25.04px;
+  height: 25px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  color: #FF0070;
+}
+
+.header__text::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 25.04px;
+  height: 25px;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  color: #FF0070;
 }
 
 .text__subtitle {
   font-weight: 700;
+}
+
+.articles {
+  margin-top: 40px;
 }
 
 .articles__list {
@@ -31,10 +105,6 @@
   gap: 50px;
   align-items: center;
   margin-left: 10px;
-}
-
-.reasons__list-item {
-
 }
 
 .article__title {
@@ -75,4 +145,42 @@
 
 .article__image {
   max-width: calc(100vw - 20px);
+  
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 40px;
+}
+
+.footer__title {
+  margin: 286px 13px 285px 14px;
+}
+
+.footer__title::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25.04px;
+  height: 25px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  color: #FF0070;
+}
+
+.footer__title::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 25.04px;
+  height: 25px;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  color: #FF0070;
+}
+
