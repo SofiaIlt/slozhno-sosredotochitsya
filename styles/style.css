@@ -221,10 +221,6 @@
     padding: 192px 0 183px;
   }
 
-  .header__theme-menu {
-    margin-top: 192px;
-  }
-
   .header__title {
     margin: 173px 0 162px;
   }
@@ -258,6 +254,10 @@
   
   .decorative-element::after {
     top: 28px;
+  }
+
+  .header__theme-menu {
+    margin: 0;
   }
 
   .title {
@@ -371,10 +371,6 @@
   .title {
     font-size: 157px;
     line-height: 129.53px;
-  }
-
-  .header__theme-menu {
-    margin: 0;
   }
   
   .header__theme-menu-list {
