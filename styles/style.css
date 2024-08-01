@@ -11,6 +11,7 @@
   overflow: auto;
 }
 
+/* header */
 
 .header {
   padding: 10px 0 66px;
@@ -39,18 +40,6 @@
   background-color: #FF0070;
   border-radius: 5px;
   filter: drop-shadow(2px 2px 4px #FF0070);
-}
-
-.title {
-  color: #DB00FF;
-  text-shadow: 4px 4px 0 var(--accent-color);
-  font-weight: 700;
-  font-size: 116px;
-  line-height: 95.7px;
-}
-
-.header__title {
-  margin: 65px 0 55px;
 }
 
 .header__theme-menu {
@@ -82,6 +71,18 @@
   outline: 1px solid #FF0070;
 }
 
+.title {
+  color: #DB00FF;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-weight: 700;
+  font-size: 116px;
+  line-height: 95.7px;
+}
+
+.header__title {
+  margin: 65px 0 55px;
+}
+
 .header__text::before {
   content: "";
   position: absolute;
@@ -106,14 +107,6 @@
   color: #FF0070;
 }
 
-.article__title {
-  color: #FF0070;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 23.4px;
-  margin-bottom: 20px;
-}
-
 .marked-text {
   color: #000028;
   font-size: 18px;
@@ -121,8 +114,27 @@
   background-color: #FF0070;
 }
 
-.text__subtitle {
+/* articles */
+
+.articles {
+  background-color: #000028;
+  padding-top: 40px;
+}
+
+.articles__list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: calc(100vw - 20px);
+  margin: 0 10px 0;
+}
+
+.article__title {
+  color: #FF0070;
   font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  margin-bottom: 20px;
 }
 
 .reasons__list {
@@ -135,19 +147,11 @@
   font-weight: 400;
 }
 
-.articles {
-  margin-top: 40px;
+.text__subtitle {
+  font-weight: 700;
 }
 
-.articles__list {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  max-width: calc(100vw - 20px);
-  margin: 0 10px 0;
-}
-
-.article__subtitle:first-child {
+.reasons__list-item .article__subtitle {
   margin: 20px 0;
 }
 
@@ -171,22 +175,24 @@
   margin-top: 10px;
 }
 
+/* footer */
+
 .footer {
+  background-color: #000028;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 40px;
 }
 
 .footer__title {
-  margin: 286px 13px 285px 14px;
+  margin: 326px 13px 285px 14px;
 }
 
 .footer__title::before {
   content: "";
   position: absolute;
-  top: 10px;
+  top: 50px;
   right: 10px;
   width: 25.04px;
   height: 25px;
@@ -207,11 +213,43 @@
   color: #FF0070;
 }
 
+/* свойства для экранов от 768px до 1024px */
 
 @media (768px <= width < 1024px) {
+
   .header {
-    padding: 20px 0 183px;
-    margin: 0 20px 0 10px;
+    padding: 192px 0 183px;
+  }
+
+  .header__theme-menu {
+    margin-top: 192px;
+  }
+
+  .header__title {
+    margin: 173px 0 162px;
+  }
+
+  .header__text {
+    width: 364px;
+  }
+
+  .article__title {
+    min-width: 236px;
+  }
+  
+  .footer__title {
+    margin: 523px 204px 462px;
+  }
+
+}
+
+/* свойства для экранов от 768px */
+
+@media (width >= 768px) {
+
+  .header {
+    margin: 0 20px 0 0;
+    position: relative;
   }
 
   .decorative-element::before {
@@ -222,15 +260,14 @@
     top: 28px;
   }
 
-  .header__theme-menu {
-    margin-top: 192px;
+  .title {
+    font-size: 120px;
+    line-height: 99px;
   }
 
   .header__text {
-    width: 364px;
     margin-right: 0px;
     margin-left: auto;
-    
   }
 
   .header__text::before {
@@ -238,11 +275,12 @@
   }
   
   .header__text::after {
-    left: 10px;
+    left: 20px;
+    bottom: 20px;
   }
 
   .articles {
-    margin-top: 60px;
+    padding-top: 60px;
   }
 
   .articles__list {
@@ -251,18 +289,14 @@
     gap: 80px;
   }
 
+  .articles__list-item:nth-child(1) .article__title{
+    margin: 0;
+  }
+
   .articles__list-item:first-child {
     display: flex;
     flex-direction: row;
     gap: 20px;
-  }
-
-  .article__title {
-    min-width: 236px;
-  }
-
-  .articles__list-item:nth-child(1) .article__title{
-    margin: 0;
   }
 
   .articles__list-item:nth-child(3) {
@@ -273,6 +307,10 @@
 
   .articles__list-item:nth-child(3) .article__subtitle{
     margin: 0 0 20px;
+  }
+
+  .articles__list-item:nth-child(4) .article__subtitle {
+    margin-bottom: 20px;
   }
 
   .article__images {
@@ -310,23 +348,103 @@
     grid-area: article__image-5;
   }
 
-  .footer {
-    margin: 60px 20px 0;
-    max-width: calc(100vw - 20px);
-  }
-  
-  .footer__title {
-    margin: 463px 184px 462px;
-  }
-  
   .footer__title::before {
-    top: 20px;
-    right: 0;
+    top: 80px;
+    right: 20px;
   }
   
   .footer__title::after {
     bottom: 20px;
-    left: 0;
+    left: 20px;
+  }
+
+}
+
+/* свойства для экранов от 1024px */
+
+@media (width >= 1024px) {
+
+  .header {
+    padding: 20px 0 134px;
+  }
+
+  .title {
+    font-size: 157px;
+    line-height: 129.53px;
+  }
+
+  .header__theme-menu {
+    margin: 0;
+  }
+  
+  .header__theme-menu-list {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header__title {
+    margin: 273px 0 114px;
+  }
+
+  .header__text {
+    width: 491px;
+  }
+
+  .article__title{
+    margin: 0;
+  }
+
+  .articles__list-item:first-child {
+    display: grid;
+    grid-template-columns: minmax(315px, 1fr) 2fr;
+  }
+
+  .articles__list-item:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    grid-template-areas: 
+      "article__title . ."
+      "reasons__list reasons__list reasons__list"
+    ;
+  }
+
+  .articles__list-item:nth-child(2) .article__title{
+    grid-area: article__title;
+  }
+
+  .articles__list-item:nth-child(2) .reasons__list:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+      "reasons__list-item1 reasons__list-item2 reasons__list-item3"
+    ;
+  }
+
+  .articles__list-item:nth-child(2) .reasons__list {
+    grid-area: reasons__list;
+  }
+
+  .reasons__list:nth-child(2) .reasons__list-item:nth-child(1) {
+    grid-area: reasons__list-item1;
+  } 
+
+  .reasons__list:nth-child(2) .reasons__list-item:nth-child(2) {
+    grid-area: reasons__list-item2;
+  } 
+
+  .reasons__list:nth-child(2) .reasons__list-item:nth-child(3) {
+    grid-area: reasons__list-item3;
+  } 
+
+  .articles__list-item:nth-child(3) .article__title {
+    min-width: 315px;
+  }
+
+  .footer__title {
+    margin: 379px 276px 319px 277px;
   }
 
 }
