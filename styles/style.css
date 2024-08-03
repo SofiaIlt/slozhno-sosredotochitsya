@@ -6,23 +6,43 @@
   --title-color: #db00ff;
   --main-text-color: #f1b2ce;
   --background-color: #000028;
+  --background-image: url(/images/cover-image-dark.png);
 }
 
 .page {
-  background-image: url(/images/cover-image-dark.png);
+  background-image: var(--background-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-color: var(--background-color);
   overflow: auto;
 }
 
 /* header */
 
-.header {
-  padding: 10px 0 66px;
+/*.header {
+  padding: 0 0 35px;
   margin: 0 10px 0;
   position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}*/
+
+.header {
+  padding: 0 0 35px;
+  margin: 0 10px 0;
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-areas: 
+  "header__theme-menu-list"
+  "title"
+  "header__text"
+  ;
 }
 
 .decorative-element::before {
@@ -43,13 +63,9 @@
   right: 9px;
   width: 9px;
   height: 9px;
-  background-color: var(--accent-color);;
+  background-color: var(--accent-color);
   border-radius: 5px;
-  filter: drop-shadow(2px 2px 4px var(--accent-color));
-}
-
-.header__theme-menu {
-  margin-top: 75px;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
 }
 
 .header__theme-menu-list {
@@ -57,6 +73,7 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
+  grid-area: "header__theme-menu-list";
 }
 
 .header__theme-menu-button {
@@ -79,14 +96,22 @@
 
 .title {
   color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
   font-weight: var(--bold-font-weight);
   font-size: 116px;
   line-height: 95.7px;
+  grid-area: "title";
 }
 
 .header__title {
-  margin: 65px 0 55px;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.text__subtitle {
+  font-weight: var(--bold-font-weight);
+}
+
+.header__text {
+  grid-area: "header__text";
 }
 
 .header__text::before {
@@ -123,8 +148,11 @@
 /* articles */
 
 .articles {
-  background-color: var(--background-color);
   padding-top: 40px;
+}
+
+.articles::before {
+
 }
 
 .articles__list {
@@ -151,10 +179,6 @@
 
 .reason__title {
   font-weight: var(--standart-font-weight);
-}
-
-.text__subtitle {
-  font-weight: var(--bold-font-weight);
 }
 
 .reasons__list-item .article__subtitle {
@@ -184,15 +208,15 @@
 /* footer */
 
 .footer {
-  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  height: 100vh;
 }
 
 .footer__title {
-  margin: 326px 13px 285px 14px;
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .footer__title::before {
@@ -222,13 +246,8 @@
 /* свойства для экранов от 768px до 1024px */
 
 @media (768px <= width < 1024px) {
-
   .header {
-    padding: 192px 0 183px;
-  }
-
-  .header__title {
-    margin: 173px 0 162px;
+    padding: 46px 0 45px;
   }
 
   .header__text {
@@ -238,26 +257,20 @@
   .article__title {
     min-width: 236px;
   }
-  
-  .footer__title {
-    margin: 523px 204px 462px;
-  }
-
 }
 
 /* свойства для экранов от 768px */
 
 @media (width >= 768px) {
-
   .header {
     margin: 0 20px 0 0;
-    position: relative;
+    justify-content: space-between;
   }
 
   .decorative-element::before {
     top: 20px;
   }
-  
+
   .decorative-element::after {
     top: 28px;
   }
@@ -272,14 +285,13 @@
   }
 
   .header__text {
-    margin-right: 0px;
-    margin-left: auto;
+    align-self: flex-end;
   }
 
   .header__text::before {
     top: 20px;
   }
-  
+
   .header__text::after {
     left: 20px;
     bottom: 20px;
@@ -295,7 +307,7 @@
     gap: 80px;
   }
 
-  .articles__list-item:nth-child(1) .article__title{
+  .articles__list-item:nth-child(1) .article__title {
     margin: 0;
   }
 
@@ -311,7 +323,7 @@
     gap: 20px;
   }
 
-  .articles__list-item:nth-child(3) .article__subtitle{
+  .articles__list-item:nth-child(3) .article__subtitle {
     margin: 0 0 20px;
   }
 
@@ -322,11 +334,10 @@
   .article__images {
     display: grid;
     gap: 20px;
-    grid-template-areas: 
+    grid-template-areas:
       "article__image-1 article__image-1 article__image-2"
       "article__image-3 article__image-4  article__image-2"
-      "article__image-3 article__image-5 article__image-5"
-    ;
+      "article__image-3 article__image-5 article__image-5";
   }
 
   .article__image {
@@ -358,18 +369,16 @@
     top: 80px;
     right: 20px;
   }
-  
+
   .footer__title::after {
     bottom: 20px;
     left: 20px;
   }
-
 }
 
 /* свойства для экранов от 1024px */
 
 @media (width >= 1024px) {
-
   .header {
     padding: 20px 0 134px;
   }
@@ -378,13 +387,13 @@
     font-size: 157px;
     line-height: 129.53px;
   }
-  
+
   .header__theme-menu-list {
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
-  
+
   .header__title {
     margin: 273px 0 114px;
   }
@@ -393,7 +402,7 @@
     width: 491px;
   }
 
-  .article__title{
+  .article__title {
     margin: 0;
   }
 
@@ -407,22 +416,19 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 20px;
-    grid-template-areas: 
+    grid-template-areas:
       "article__title . ."
-      "reasons__list reasons__list reasons__list"
-    ;
+      "reasons__list reasons__list reasons__list";
   }
 
-  .articles__list-item:nth-child(2) .article__title{
+  .articles__list-item:nth-child(2) .article__title {
     grid-area: article__title;
   }
 
   .articles__list-item:nth-child(2) .reasons__list:nth-child(2) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 
-      "reasons__list-item1 reasons__list-item2 reasons__list-item3"
-    ;
+    grid-template-areas: "reasons__list-item1 reasons__list-item2 reasons__list-item3";
   }
 
   .articles__list-item:nth-child(2) .reasons__list {
@@ -431,22 +437,17 @@
 
   .reasons__list:nth-child(2) .reasons__list-item:nth-child(1) {
     grid-area: reasons__list-item1;
-  } 
+  }
 
   .reasons__list:nth-child(2) .reasons__list-item:nth-child(2) {
     grid-area: reasons__list-item2;
-  } 
+  }
 
   .reasons__list:nth-child(2) .reasons__list-item:nth-child(3) {
     grid-area: reasons__list-item3;
-  } 
+  }
 
   .articles__list-item:nth-child(3) .article__title {
     min-width: 315px;
   }
-
-  .footer__title {
-    margin: 379px 276px 319px 277px;
-  }
-
 }
