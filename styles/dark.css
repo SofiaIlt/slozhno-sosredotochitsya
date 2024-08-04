@@ -12,11 +12,12 @@
   --title-shadow: #ff0070;
   --article__title: #ff0070;
   --button-hover: #FF007066;
+  --rec-color: #ff0070;
   --background-image: url(../images/cover-image-dark.png);
 }
 
 @media (prefers-color-scheme: dark) {
-  .root {
+  :root {
     --accent-color: #ff0070;
     --standart-font-weight: 400;
     --bold-font-weight: 700;
@@ -29,6 +30,7 @@
     --title-shadow: #ff0070;
     --article__title: #ff0070;
     --button-hover: #FF007066;
+    --rec-color: #ff0070;
     --background-image: url(../images/cover-image-dark.png);
   }
 }

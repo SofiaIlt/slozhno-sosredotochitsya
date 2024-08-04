@@ -9,15 +9,18 @@
   --title-shadow: #ff0070;
   --article__title: #353430;
   --button-hover: #32312D66;
+  --rec-color: transparent;
   --background-image: url(../images/cover-image-light.png);
 }
 
-.page.theme_light > .decorative-element {
-  display: none;
+.page.theme_light {
+  .decorative-element  {
+    display: none;
+  }
 }
 
 @media (prefers-color-scheme: light) {
-  .root {
+  :root {
     --accent-color: #ff8dcb;
     --title-color: #ffc2e6;
     --main-text-color: #353430;
@@ -27,6 +30,7 @@
     --title-shadow: #ff0070;
     --article__title: #353430;
     --button-hover: #32312D66;
+    --rec-color: transparent;
     --background-image: url(../images/cover-image-light.png);
   }
 }
