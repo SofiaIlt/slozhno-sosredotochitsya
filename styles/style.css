@@ -78,7 +78,6 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
-  margin-bottom: 10px;
 }
 
 .header__theme-menu-item {
@@ -254,10 +253,6 @@
 
   .decorative-element {
     top: 28px;
-  }
-
-  .header__theme-menu-list {
-    margin-bottom: 20px;
   }
 
   .header__text {

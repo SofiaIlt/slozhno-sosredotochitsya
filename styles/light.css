@@ -11,13 +11,12 @@
   --button-hover: #32312D66;
   --rec-color: transparent;
   --background-image: url(../images/cover-image-light.png);
-}
-
-.page.theme_light {
-  .decorative-element  {
+  
+  .decorative-element {
     display: none;
   }
 }
+
 
 @media (prefers-color-scheme: light) {
   :root {
