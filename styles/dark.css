@@ -15,7 +15,20 @@
   --background-image: url(../images/cover-image-dark.png);
 }
 
-.page.theme_dark > .header > .header__theme-menu > .header__theme-menu-list > .header__theme-menu-item > .header__theme-menu-button_type_dark {
-  outline: 1px solid var(--frame-and-menu-color);
-  pointer-events: none;
+@media (prefers-color-scheme: dark) {
+  .root {
+    --accent-color: #ff0070;
+    --standart-font-weight: 400;
+    --bold-font-weight: 700;
+    --small-font-size: 18px;
+    --title-color: #db00ff;
+    --main-text-color: #f1b2ce;
+    --background-color: #000028;
+    --title-decor-color: #000028;
+    --frame-and-menu-color: #ff0070;
+    --title-shadow: #ff0070;
+    --article__title: #ff0070;
+    --button-hover: #FF007066;
+    --background-image: url(../images/cover-image-dark.png);
+  }
 }
