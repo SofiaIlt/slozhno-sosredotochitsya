@@ -108,8 +108,8 @@
   outline: none;
 }
 
-.header__theme-menu-button:has(:focus-visible) {
-  outline: 1px solid var(--frame-and-menu-color);
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--frame-and-menu-color);
 }
 
 .title {
@@ -189,16 +189,16 @@
   text-decoration: none;
 }
 
+.accent-word:hover {
+  border-bottom: 1px solid var(--main-text-color);
+}
+
 .accent-word:focus {
   outline: none;
 }
 
-.accent-word:has(:focus-visible) {
+.accent-word:focus-visible {
   outline: 1px solid var(--main-text-color);
-}
-
-.accent-word:hover {
-  border-bottom: 1px solid var(--main-text-color);
 }
 
 .pictures {
@@ -277,21 +277,22 @@
     gap: 80px;
   }
 
+  .section {
+    display: grid;
+    gap: 20px;
+  }
+
   .section__title {
     margin: 0;
   }
 
   .why {
-    display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 20px;
   }
 
   .what {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 20px;
   }
 
   .what .reasons__list {
@@ -300,9 +301,7 @@
   }
 
   .how {
-    display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 20px;
   }
 
   .pictures {
@@ -406,7 +405,6 @@
   }
 
   .what .reasons__list {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
