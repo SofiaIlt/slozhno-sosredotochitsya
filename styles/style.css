@@ -255,6 +255,10 @@
     top: 28px;
   }
 
+  .header__theme-menu-list {
+    margin-top: 10px;
+  }
+
   .header__text {
     max-width: 364px;
     width:100%;
@@ -354,6 +358,11 @@
     margin: 0 20px 0;
   }
 
+  .footer.decorated-zone::after {
+    bottom: 20px;
+    left: 0;
+  }
+
   .footer__title::before {
     top: 20px;
     right: 20px;
@@ -405,6 +414,7 @@
   }
 
   .what .reasons__list {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
