@@ -199,6 +199,7 @@
 
 .accent-word:focus-visible {
   outline: 1px solid var(--main-text-color);
+  outline-offset: -1px;
 }
 
 .pictures {
